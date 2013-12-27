@@ -1,5 +1,7 @@
 package encode
 
+import "strings"
+
 func coding(r rune) rune {
 
 	var c map[rune]rune
@@ -38,7 +40,7 @@ func coding(r rune) rune {
 }
 
 func Encode(s string) string {
-	b := []rune(s)
+	b := []rune(strings.ToLower(s))
 
 	for i := 0; i < len(b); i++ {
 		b[i] = coding(b[i])
